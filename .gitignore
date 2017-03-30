@@ -1,0 +1,10 @@
+acme-tiny/
+bin/
+share/
+lib/
+include/
+ignore/
+pip-selfcheck.json
+config.json
+config_development.json
+*.pyc
