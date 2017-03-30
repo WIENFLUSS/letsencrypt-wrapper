@@ -1,0 +1,31 @@
+{
+    "STAGING_CA": "https://acme-staging.api.letsencrypt.org",
+    "CERT_DIR": "/etc/ssl/private/certs",
+    "ACCOUNT_KEY": "/etc/ssl/private/keys/account.key",
+    "DOMAIN_KEY": "/etc/ssl/private/keys/domain.key",
+    "CHAIN_CERT": "/etc/ssl/private/keys/chain.pem",
+    "CHALLENGE_FOLDER": "/srv/www/htdocs/.well-known/acme-challenge/",
+    "ACME_TINY": "/usr/bin/acme-tiny/acme_tiny.py",
+    "DAYS_LEFT_BEFORE_RENEW": 30,
+    "MAX_RENEW_PER_RUN": 10,
+    "MAX_RETRIES": 1,
+    "RETRY_WAIT_SECS": 1,
+    "WAIT_BETWEEN_REQUESTS": 15,
+    "EXECUTE_ON_COMPLETION": ["systemctl", "restart", "apache2.service"],
+    "SMTP_SERVER": "internal.smtp.domain.com",
+    "SUMMARY_EMAIL_TO": "webmaster@domain.com",
+    "SUMMARY_EMAIL_FROM": "status@domain.com",
+    "ENABLED_DOMAINS": {
+        "domain.com": {
+            "hostname": "domain.com",
+            "vhost_file": "/etc/apache2/vhosts.d/domain.conf"
+        },
+        "second-domain.net": {
+            "hostname": "second-domain.net",
+            "vhost_file": "/etc/apache2/vhosts.d/second-domain.conf",
+            "aliases": [
+                "www.second-domain.net"
+            ]
+        }
+    }
+}
